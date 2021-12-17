@@ -18,7 +18,7 @@ export class GifsService {
 
     this._historial =JSON.parse(localStorage.getItem('historial')!) || [];  
     this.resultados =JSON.parse(localStorage.getItem('resultados')!) || [];  
-    
+    this.buscarGifs()
   }
 
   get historial(){
@@ -26,7 +26,7 @@ export class GifsService {
     return [...this._historial];
   }
 
-  buscarGifs (query: string) {
+  buscarGifs (query: string = 'one punch man') {
 
     query = query.trim().toLocaleLowerCase();
 
